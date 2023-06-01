@@ -14,10 +14,15 @@ const ButtonsLeftRight = ({ pageIndex, setPageIndex, lastPage }: Props) => {
         setPageIndex(index);
     }
 
+    function getCurrentPages() {
+        let result = (pageIndex * 2 + 1) + '-' + (pageIndex * 2 + 2);
+        return result;
+    }
+
     return (
         <div className={classes.buttons}>
             <button className={classes.prev} onClick={() => switchPage(pageIndex - 1)}><div /></button>
-            <div className={classes.page_name}>{"Страница " + (pageIndex + 1)}</div>
+            <div className={classes.page_name}>{"Страница " + getCurrentPages()}</div>
             <button className={classes.next} onClick={() => switchPage(pageIndex + 1)}><div /></button>
         </div>
     );

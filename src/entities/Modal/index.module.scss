@@ -12,11 +12,14 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 100;
     
     .modal {
         @include flex_center;
-        width: 80%;
-        height: 50%;
+        width: 70%;
+        min-height: 30%;
+        height: fit-content;
+        max-height: 80%;
         background-color: white;
     }
 }

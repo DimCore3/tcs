@@ -1,0 +1,15 @@
+.photo_container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 600px;
+    height: 40vw;
+    max-height: 300px;
+    background-color: white;
+    margin: 16px;
+    padding: 10px;
+    border: 2px rgb(218, 218, 218) groove;
+}

@@ -1,0 +1,16 @@
+.zoom_out_photo {
+    width: 30%;
+    min-width: 30px;
+    height: 40%;
+    min-height: 30px;
+    max-height: 150px;
+    margin: 4px;
+    image-rendering: optimizeSpeed;
+    object-fit: cover;
+}
+
+.zoom_in_photo {
+    width: 100%;
+    image-rendering: optimizeQuality;
+    object-fit: cover;
+}

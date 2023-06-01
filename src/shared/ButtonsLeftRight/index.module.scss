@@ -1,0 +1,50 @@
+@mixin border-corner($border-main-style) {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    left: 9px;
+    border-left: $border-main-style;
+    border-bottom: $border-main-style;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    width: 100%;
+    margin-bottom: 16px;
+
+    button {
+        background-color: var(--background-color-button-carousel);
+        border: none;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+    }
+
+    .prev {
+        div {
+            @include border-corner(2px solid #555555);
+            transform: rotate(45deg);
+        }
+    }
+
+    .page_name {
+        text-align: center;
+        margin: 0 16px;
+        color: var(--font-color-active);
+    }
+
+    .next {
+        div {
+            @include border-corner(2px solid #555555);
+            transform: rotate(-135deg)
+        }
+    }
+}
+
+.prev:hover, .next:hover {
+    background-color: #c0c0c0;
+    cursor: pointer;
+}

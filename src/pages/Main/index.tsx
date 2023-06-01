@@ -1,7 +1,10 @@
+import PhotoAlbum from "entities/PhotoAlbum";
+
 const Main = () => {
     return (
-        <div className="main_page">
-        </div>
+        <main>
+            <PhotoAlbum>Контент</PhotoAlbum>
+        </main>
     );
 }
 

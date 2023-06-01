@@ -1,11 +1,8 @@
-
-
 const Main = () => {
-    return ( 
-        <main className="main_page">
-            Main
-        </main>
-     );
+    return (
+        <div className="main_page">
+        </div>
+    );
 }
- 
+
 export default Main;

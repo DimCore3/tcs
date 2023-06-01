@@ -1,0 +1,22 @@
+@mixin flex_center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background_modal {
+    @include flex_center;
+    position: fixed;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    .modal {
+        @include flex_center;
+        width: 80%;
+        height: 50%;
+        background-color: white;
+    }
+}

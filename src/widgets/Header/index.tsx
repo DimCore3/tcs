@@ -2,7 +2,7 @@ import { PutInBasket } from 'features';
 import classes from './index.module.scss';
 
 const Header = () => {
-    
+
     return (
         <header>
             <div className={classes.left_side}>
@@ -12,7 +12,7 @@ const Header = () => {
                 </div>
             </div>
             <div className={classes.right_side}>
-                <button onClick={PutInBasket}>В корзину 1180.00 ₽</button>
+                <PutInBasket>В корзину 1180.00 ₽</PutInBasket>
             </div>
         </header>
     );

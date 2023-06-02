@@ -11,9 +11,9 @@ const PhotoAlbum = ({ contentPhotoAlbum, setContentPhotoAlbum }: ContentPhotoAlb
     return (
         <div className={classes.photo_album_background}>
             <Photos 
-                contentPhotoAlbum={contentPhotoAlbum} 
                 moveDirection={moveDirection}
                 pageIndex={pageIndex} 
+                contentPhotoAlbum={contentPhotoAlbum} 
                 setContentPhotoAlbum={setContentPhotoAlbum}
             />
             <ButtonsLeftRight 
@@ -21,7 +21,7 @@ const PhotoAlbum = ({ contentPhotoAlbum, setContentPhotoAlbum }: ContentPhotoAlb
                 pageIndex={pageIndex} 
                 content={contentPhotoAlbum} 
                 setMoveDirection={setMoveDirection}  
-                setPageIndex={setPageIndex}  
+                setPageIndex={setPageIndex}
             />
         </div>
     );

@@ -43,9 +43,17 @@ const Main = () => {
     return (
         <main>
             {!isHidePhotoAlbum &&
-                <PhotoAlbum contentPhotoAlbum={contentPhotoAlbum} setContentPhotoAlbum={setContentPhotoAlbum} />
+                <PhotoAlbum 
+                    contentPhotoAlbum={contentPhotoAlbum} 
+                    setContentPhotoAlbum={setContentPhotoAlbum} 
+                />
             }
-            <PhotoHandler isHidePhotoAlbum={isHidePhotoAlbum} setisHidePhotoAlbum={setisHidePhotoAlbum}/>
+            <PhotoHandler 
+                isHidePhotoAlbum={isHidePhotoAlbum} 
+                setisHidePhotoAlbum={setisHidePhotoAlbum}
+                contentPhotoAlbum={contentPhotoAlbum} 
+                setContentPhotoAlbum={setContentPhotoAlbum}    
+            />
         </main>
     );
 }

@@ -5,12 +5,32 @@ import { ButtonsLeftRight } from 'shared';
 import { ContentPhotoAlbum } from './model';
 
 const PhotoAlbum = ({ content }: ContentPhotoAlbum) => {
-    const [pageIndex, setPageIndex] = useState(0);
+    const [pageIndex, setPageIndex] = useState<number>(0);
+    const [moveDirection, setMoveDirection] = useState<'move_left' | 'move_right' | ''>('')
+
+    function switchPage(index: number, direction: 'move_left' | 'move_right') {
+        const lastPage = content.length - 1;
+        setMoveDirection(direction);
+
+        setTimeout(() => {
+            setMoveDirection('');
+
+            if (index < 0) {
+                setPageIndex(lastPage);
+                return;
+            };
+            if (index > lastPage) {
+                setPageIndex(0);
+                return;
+            };
+            setPageIndex(index);
+        }, 1000);
+    }
 
     return (
         <div className={classes.photo_album_background}>
-            <Photos images={content[pageIndex]} />
-            <ButtonsLeftRight pageIndex={pageIndex} setPageIndex={setPageIndex} lastPage={content.length - 1} />
+            <Photos images={content[pageIndex]} moveDirection={moveDirection} />
+            <ButtonsLeftRight isDisabled={moveDirection !== ''} pageIndex={pageIndex} switchPage={switchPage} />
         </div>
     );
 }

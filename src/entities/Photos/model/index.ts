@@ -5,4 +5,5 @@ type Image = {
 
 export type Props = {
     images: Image[],
+    moveDirection: 'move_left' | 'move_right' | '',
 }

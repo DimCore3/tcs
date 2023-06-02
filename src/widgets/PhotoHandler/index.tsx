@@ -1,8 +1,9 @@
 import { useState } from "react";
 import classes from './index.module.scss';
-import { NavPanel } from "shared";
+import { FullscreenButton, NavPanel } from "shared";
+import { Props } from './model';
 
-const PhotoHandler = () => {
+const PhotoHandler = ({ isHidePhotoAlbum, setisHidePhotoAlbum }: Props) => {
     const [indexOpenedPanel, setIndexOpenedPanel] = useState<number>(0);
     const panelNames: string[] = [
         'Галерея',
@@ -18,6 +19,7 @@ const PhotoHandler = () => {
                 panelNames={panelNames}
             />
             <div className={classes.handler_panel}>
+                <FullscreenButton action={() => setisHidePhotoAlbum(!isHidePhotoAlbum)} />
                 {panelNames[indexOpenedPanel] === 'Галерея'
                     && <p>Галерея</p>
                 }

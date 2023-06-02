@@ -1,0 +1,16 @@
+.full_size_button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    position: absolute;
+    right: 0px;
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+}

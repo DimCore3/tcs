@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { checkAndFillEmptyPhotos } from "./helpers";
 
 const Main = () => {
+    const [isHidePhotoAlbum, setisHidePhotoAlbum] = useState(false);
     const [contentPhotoAlbum, setContentPhotoAlbum] = useState<ContentPhotoAlbum>([
         [
             {
@@ -41,8 +42,10 @@ const Main = () => {
 
     return (
         <main>
-            <PhotoAlbum contentPhotoAlbum={contentPhotoAlbum} setContentPhotoAlbum={setContentPhotoAlbum} />
-            <PhotoHandler />
+            {!isHidePhotoAlbum &&
+                <PhotoAlbum contentPhotoAlbum={contentPhotoAlbum} setContentPhotoAlbum={setContentPhotoAlbum} />
+            }
+            <PhotoHandler isHidePhotoAlbum={isHidePhotoAlbum} setisHidePhotoAlbum={setisHidePhotoAlbum}/>
         </main>
     );
 }

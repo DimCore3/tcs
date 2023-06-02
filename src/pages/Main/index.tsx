@@ -1,4 +1,4 @@
-import { PhotoAlbum } from "widgets";
+import { PhotoAlbum, PhotoHandler } from "widgets";
 import { ContentPhotoAlbum } from './model';
 
 const Main = () => {
@@ -41,6 +41,7 @@ const Main = () => {
     return (
         <main>
             <PhotoAlbum content={contentPhotoAlbum} />
+            <PhotoHandler />
         </main>
     );
 }

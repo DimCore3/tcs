@@ -1,0 +1,21 @@
+.nav_panels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    border-bottom: 1px #DDD solid;
+
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: rgba($color: #000000, $alpha: 0.0);
+        height: 39px;
+        padding: 0 6px;
+        color: var(--font-color-inactive);
+    }
+    
+    .nav_clicked {
+        color: var(--font-color-active);
+        border-bottom: 2px solid gray;
+    }
+}

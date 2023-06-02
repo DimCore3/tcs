@@ -8,4 +8,5 @@ export type Props = {
     setisHidePhotoAlbum: Function
     contentPhotoAlbum: Image[][];
     setContentPhotoAlbum: Function,
+    pageIndex: number,
 }

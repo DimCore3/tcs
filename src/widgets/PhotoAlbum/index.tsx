@@ -4,23 +4,22 @@ import Photos from 'entities/Photos';
 import { ButtonsLeftRight } from 'shared';
 import { ContentPhotoAlbum } from './model';
 
-const PhotoAlbum = ({ contentPhotoAlbum, setContentPhotoAlbum }: ContentPhotoAlbum) => {
-    const [pageIndex, setPageIndex] = useState<number>(0);
+const PhotoAlbum = ({ contentPhotoAlbum, setContentPhotoAlbum, pageIndex, setPageIndex }: ContentPhotoAlbum) => {
     const [moveDirection, setMoveDirection] = useState<'move_left' | 'move_right' | ''>('')
 
     return (
         <div className={classes.photo_album_background}>
-            <Photos 
+            <Photos
                 moveDirection={moveDirection}
-                pageIndex={pageIndex} 
-                contentPhotoAlbum={contentPhotoAlbum} 
+                pageIndex={pageIndex}
+                contentPhotoAlbum={contentPhotoAlbum}
                 setContentPhotoAlbum={setContentPhotoAlbum}
             />
-            <ButtonsLeftRight 
-                isDisabled={moveDirection !== ''} 
-                pageIndex={pageIndex} 
-                content={contentPhotoAlbum} 
-                setMoveDirection={setMoveDirection}  
+            <ButtonsLeftRight
+                isDisabled={moveDirection !== ''}
+                pageIndex={pageIndex}
+                content={contentPhotoAlbum}
+                setMoveDirection={setMoveDirection}
                 setPageIndex={setPageIndex}
             />
         </div>

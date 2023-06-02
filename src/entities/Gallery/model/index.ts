@@ -6,4 +6,5 @@ export type Image = {
 export type Props = {
     contentPhotoAlbum: Image[][];
     setContentPhotoAlbum: Function,
+    pageIndex: number,
 }

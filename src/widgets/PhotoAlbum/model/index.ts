@@ -4,5 +4,6 @@ type Image = {
 }
 
 export type ContentPhotoAlbum = {
-    content: Image[][]
+    contentPhotoAlbum: Image[][],
+    setContentPhotoAlbum: Function
 };

@@ -4,6 +4,8 @@ type Image = {
 }
 
 export type Props = {
-    images: Image[],
+    contentPhotoAlbum:Image[][],
     moveDirection: 'move_left' | 'move_right' | '',
+    pageIndex: number,
+    setContentPhotoAlbum: Function,
 }

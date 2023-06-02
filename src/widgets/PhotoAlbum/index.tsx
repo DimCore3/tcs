@@ -4,33 +4,25 @@ import Photos from 'entities/Photos';
 import { ButtonsLeftRight } from 'shared';
 import { ContentPhotoAlbum } from './model';
 
-const PhotoAlbum = ({ content }: ContentPhotoAlbum) => {
+const PhotoAlbum = ({ contentPhotoAlbum, setContentPhotoAlbum }: ContentPhotoAlbum) => {
     const [pageIndex, setPageIndex] = useState<number>(0);
     const [moveDirection, setMoveDirection] = useState<'move_left' | 'move_right' | ''>('')
 
-    function switchPage(index: number, direction: 'move_left' | 'move_right') {
-        const lastPage = content.length - 1;
-        setMoveDirection(direction);
-
-        setTimeout(() => {
-            setMoveDirection('');
-
-            if (index < 0) {
-                setPageIndex(lastPage);
-                return;
-            };
-            if (index > lastPage) {
-                setPageIndex(0);
-                return;
-            };
-            setPageIndex(index);
-        }, 1000);
-    }
-
     return (
         <div className={classes.photo_album_background}>
-            <Photos images={content[pageIndex]} moveDirection={moveDirection} />
-            <ButtonsLeftRight isDisabled={moveDirection !== ''} pageIndex={pageIndex} switchPage={switchPage} />
+            <Photos 
+                contentPhotoAlbum={contentPhotoAlbum} 
+                moveDirection={moveDirection}
+                pageIndex={pageIndex} 
+                setContentPhotoAlbum={setContentPhotoAlbum}
+            />
+            <ButtonsLeftRight 
+                isDisabled={moveDirection !== ''} 
+                pageIndex={pageIndex} 
+                content={contentPhotoAlbum} 
+                setMoveDirection={setMoveDirection}  
+                setPageIndex={setPageIndex}  
+            />
         </div>
     );
 }

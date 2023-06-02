@@ -12,5 +12,32 @@
     margin: 16px;
     padding: 10px;
     border: 2px rgb(218, 218, 218) groove;
-}
 
+    .photo_with_delete_icon {
+        width: 30%;
+        height: 40%;
+        min-width: 30px;
+        min-height: 30px;
+        max-height: 150px;
+        margin: 4px;
+
+        .delete_photo {
+            cursor: pointer;
+            display: none;
+            position: relative;
+            bottom: 96%;
+            left: 66%;
+            width: 20%;
+            height: 20%;
+            background-image: url("../assets/delete-button.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .photo_with_delete_icon:hover {
+        .delete_photo {
+            display: block;
+        }
+    }
+}

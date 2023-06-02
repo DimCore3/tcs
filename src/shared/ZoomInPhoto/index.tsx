@@ -3,14 +3,14 @@ import classes from './index.module.scss';
 import Modal from "entities/Modal";
 import { Props } from './model';
 
-const ZoomInPhoto = ({ src, alt = '' }: Props) => {
+const ZoomInPhoto = ({ isDeleted, src, alt = '' }: Props) => {
     const [isShowModal, setIsShowModal] = useState(false);
 
     return (
         <>
             <img
-                onClick={() => setIsShowModal(!isShowModal)}
-                className={classes.zoom_out_photo}
+                onClick={() => { if (!isDeleted) setIsShowModal(!isShowModal) }}
+                className={isDeleted ? `${classes.zoom_out_photo} ${classes.deleted}` : classes.zoom_out_photo}
                 src={src}
                 alt={alt}
             />

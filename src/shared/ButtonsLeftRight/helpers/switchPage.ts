@@ -16,5 +16,5 @@ export default function switchPage(...[index, direction, content, setMoveDirecti
             return;
         };
         setPageIndex(index);
-    }, 1000);
+    }, 600);
 }

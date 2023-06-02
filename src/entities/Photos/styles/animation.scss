@@ -1,11 +1,11 @@
 .move_left {
     transform: translateX(150%);
-    animation: move_to_left 1s ease-in;
+    animation: move_to_left 0.4s ease-in;
 }
 
 .move_right {
     transform: translateX(-150%);
-    animation: move_to_right 1s ease-in;
+    animation: move_to_right 0.4s ease-in;
 }
 
 @keyframes move_to_right {

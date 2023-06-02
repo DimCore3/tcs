@@ -8,12 +8,16 @@ const ZoomInPhoto = ({ isDeleted, src, alt = '' }: Props) => {
 
     return (
         <>
-            <img
-                onClick={() => { if (!isDeleted) setIsShowModal(!isShowModal) }}
-                className={isDeleted ? `${classes.zoom_out_photo} ${classes.deleted}` : classes.zoom_out_photo}
-                src={src}
-                alt={alt}
-            />
+            <div className={isDeleted ? `${classes.zoom_out_photo} ${classes.deleted}` : classes.zoom_out_photo}>
+                {!isDeleted &&
+                    <img
+                        onClick={() => { if (!isDeleted) setIsShowModal(!isShowModal) }}
+                        src={src}
+                        alt={alt}
+                    />
+                }
+
+            </div>
             {isShowModal &&
                 <Modal setIsShowModal={setIsShowModal}>
                     <img

@@ -25,19 +25,26 @@
             cursor: pointer;
             display: none;
             position: relative;
-            bottom: 96%;
-            left: 66%;
-            width: 20%;
-            height: 20%;
+            bottom: 92%;
+            left: 64%;
+            width: 3vh;
+            height: 3vh;
+            border-radius: 50%;
+            padding: 1px;
+            border: 1px #999999 dotted;
+            background-color: rgba($color: #000000, $alpha: 0.3);
             background-image: url("../assets/delete-button.svg");
-            background-size: contain;
+            background-size: 2vh;
+            background-position: center;
             background-repeat: no-repeat;
         }
     }
 
     .photo_with_delete_icon:hover {
         .delete_photo {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

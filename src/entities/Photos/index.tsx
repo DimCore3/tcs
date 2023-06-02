@@ -22,8 +22,8 @@ const Photos = ({ contentPhotoAlbum, moveDirection, pageIndex, setContentPhotoAl
                         key={'album_image_' + photoIndex}
                         isDeleted={contentPhotoAlbum[pageIndex][photoIndex].src === ''}
                     />
-                    {contentPhotoAlbum[pageIndex][photoIndex].src !== ''
-                        && <div
+                    {contentPhotoAlbum[pageIndex][photoIndex].src !== '' &&
+                        <div
                             onClick={() => deletePhoto(photoIndex)}
                             className={classes.delete_photo}
                             key={'album_image_delete_' + photoIndex}

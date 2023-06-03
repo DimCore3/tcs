@@ -6,36 +6,7 @@ import { checkAndFillEmptyPhotos } from "./helpers";
 const Main = () => {
     const [pageIndex, setPageIndex] = useState<number>(0);
     const [isHidePhotoAlbum, setisHidePhotoAlbum] = useState(false);
-    const [contentPhotoAlbum, setContentPhotoAlbum] = useState<ContentPhotoAlbum>([
-        [
-            {
-                src: "https://acniowa.com/wp-content/uploads/2016/03/test-image.png",
-            },
-            {
-                src: "https://www.safetechhardware.com/files/articles_img/38/test-key-0.png",
-            },
-            {
-                src: '',
-            },
-            {
-                src: "https://acniowa.com/wp-content/uploads/2016/03/test-image.png",
-            },
-            {
-                src: "https://www.safetechhardware.com/files/articles_img/38/test-key-0.png",
-            },
-            {
-                src: "https://acniowa.com/wp-content/uploads/2016/03/test-image.png",
-            }
-        ],
-        [
-            {
-                src: "https://acniowa.com/wp-content/uploads/2016/03/test-image.png",
-            },
-            {
-                src: "https://acniowa.com/wp-content/uploads/2016/03/test-image.png",
-            }
-        ]
-    ]);
+    const [contentPhotoAlbum, setContentPhotoAlbum] = useState<ContentPhotoAlbum>([[],[],[],[]]);
 
     useEffect(() => {
         checkAndFillEmptyPhotos(contentPhotoAlbum, setContentPhotoAlbum);
@@ -44,19 +15,19 @@ const Main = () => {
     return (
         <main>
             {!isHidePhotoAlbum &&
-                <PhotoAlbum 
-                    contentPhotoAlbum={contentPhotoAlbum} 
+                <PhotoAlbum
+                    contentPhotoAlbum={contentPhotoAlbum}
                     setContentPhotoAlbum={setContentPhotoAlbum}
-                    pageIndex={pageIndex} 
+                    pageIndex={pageIndex}
                     setPageIndex={setPageIndex}
                 />
             }
-            <PhotoHandler 
-                isHidePhotoAlbum={isHidePhotoAlbum} 
+            <PhotoHandler
+                isHidePhotoAlbum={isHidePhotoAlbum}
                 setisHidePhotoAlbum={setisHidePhotoAlbum}
-                contentPhotoAlbum={contentPhotoAlbum} 
+                contentPhotoAlbum={contentPhotoAlbum}
                 setContentPhotoAlbum={setContentPhotoAlbum}
-                pageIndex={pageIndex}    
+                pageIndex={pageIndex}
             />
         </main>
     );

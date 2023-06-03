@@ -1,4 +1,13 @@
 .handler_panel {
     background-color: white;
+    min-height: 200px;
     height: fit-content;
+
+    h2 {
+        text-align: center;
+        font-size: 38px;
+        line-height: 3em;
+        font-weight: 700;
+        color: var(--font-color-inactive);
+    }
 }

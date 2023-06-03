@@ -6,6 +6,10 @@ import { Props } from './model';
 const Gallery = ({ contentPhotoAlbum, setContentPhotoAlbum, pageIndex }: Props) => {
     const [photosForEdit, setPhotosForEdit] = useState<string[]>([]);
 
+    function handleDrag(e: React.DragEvent, imgPath: string) {
+        e.dataTransfer.setData("imgPath", imgPath);
+    }
+
     return (
         <div className={classes.gallery}>
             <div className={classes.gallery_buttons}>
@@ -23,11 +27,13 @@ const Gallery = ({ contentPhotoAlbum, setContentPhotoAlbum, pageIndex }: Props) 
                     <p>Добавить фотографию</p>
                 </div>
                 {photosForEdit.map((imgPath, index) => (
-                    <img 
-                        onClick={() => addPhotoToAlbum(imgPath, contentPhotoAlbum, setContentPhotoAlbum, pageIndex)} 
-                        src={imgPath ?? ''} 
-                        alt="" 
-                        key={index} 
+                    <img
+                        onClick={() => addPhotoToAlbum(imgPath, contentPhotoAlbum, setContentPhotoAlbum, pageIndex)}
+                        src={imgPath ?? ''}
+                        alt=""
+                        key={index}
+                        draggable
+                        onDragStart={(e) => handleDrag(e, imgPath)}
                     />
                 ))}
             </div>

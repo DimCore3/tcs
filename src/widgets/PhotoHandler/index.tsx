@@ -25,10 +25,10 @@ const PhotoHandler = ({ isHidePhotoAlbum, setisHidePhotoAlbum, contentPhotoAlbum
                     && <Gallery contentPhotoAlbum={contentPhotoAlbum} setContentPhotoAlbum={setContentPhotoAlbum} pageIndex={pageIndex}/>
                 }
                 {panelNames[indexOpenedPanel] === 'Шаблоны'
-                    && <p>Шаблоны</p>
+                    && <h2>Шаблоны</h2>
                 }
                 {panelNames[indexOpenedPanel] === 'Фон'
-                    && <p>Фон</p>
+                    && <h2>Фон</h2>
                 }
             </div>
         </div>

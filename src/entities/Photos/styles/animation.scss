@@ -1,10 +1,10 @@
 .move_left {
-    transform: translateX(150%);
+    transform: translateX(300%);
     animation: move_to_left 0.4s ease-in;
 }
 
 .move_right {
-    transform: translateX(-150%);
+    transform: translateX(-300%);
     animation: move_to_right 0.4s ease-in;
 }
 
@@ -13,7 +13,7 @@
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-150%);
+        transform: translateX(-300%);
     }
 }
 
@@ -22,6 +22,6 @@
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(150%);
+        transform: translateX(300%);
     }
 }

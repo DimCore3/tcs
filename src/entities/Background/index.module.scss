@@ -1,0 +1,13 @@
+.background_content {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+        cursor: pointer;
+        width: 110px;
+        height: 80px;
+        border-radius: 4px;
+        margin: 8px;
+        object-fit: contain;
+    }
+}

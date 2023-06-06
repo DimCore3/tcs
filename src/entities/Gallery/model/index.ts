@@ -7,4 +7,6 @@ export type Props = {
     contentPhotoAlbum: Image[][];
     setContentPhotoAlbum: Function,
     pageIndex: number,
+    galleryPhotosForEdit:string[],
+    setGalleryPhotosForEdit: Function,
 }

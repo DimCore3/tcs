@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { addPhotoToAlbum, addPhotoToHandler, clearAll } from './helpers';
-import classes from './index.module.scss';
 import { Props } from './model';
+import classes from './index.module.scss';
+import { addPhotoToAlbum, clearAll } from './helpers';
+import { AddPhoto } from 'shared';
 
-const Gallery = ({ contentPhotoAlbum, setContentPhotoAlbum, pageIndex }: Props) => {
-    const [photosForEdit, setPhotosForEdit] = useState<string[]>([]);
-
+const Gallery = (props: Props) => {
     function handleDrag(e: React.DragEvent, imgPath: string) {
         e.dataTransfer.setData("imgPath", imgPath);
     }
@@ -13,22 +11,13 @@ const Gallery = ({ contentPhotoAlbum, setContentPhotoAlbum, pageIndex }: Props) 
     return (
         <div className={classes.gallery}>
             <div className={classes.gallery_buttons}>
-                <button onClick={() => clearAll(contentPhotoAlbum, setContentPhotoAlbum)}>Очистить</button>
+                <button onClick={() => clearAll(props.contentPhotoAlbum, props.setContentPhotoAlbum)}>Очистить</button>
             </div>
             <div className={classes.gallery_content}>
-                <div className={classes.add_photo}>
-                    <input
-                        name=""
-                        id=""
-                        type="file"
-                        accept='image/*,.png,.jpg'
-                        onChange={(e) => addPhotoToHandler(e, photosForEdit, setPhotosForEdit)}
-                    />
-                    <p>Добавить фотографию</p>
-                </div>
-                {photosForEdit.map((imgPath, index) => (
+                <AddPhoto photosForEdit={props.galleryPhotosForEdit} setPhotosForEdit={props.setGalleryPhotosForEdit}>Добавить фото</AddPhoto>
+                {props.galleryPhotosForEdit.map((imgPath, index) => (
                     <img
-                        onClick={() => addPhotoToAlbum(imgPath, contentPhotoAlbum, setContentPhotoAlbum, pageIndex)}
+                        onClick={() => addPhotoToAlbum(imgPath, props.contentPhotoAlbum, props.setContentPhotoAlbum, props.pageIndex)}
                         src={imgPath ?? ''}
                         alt=""
                         key={index}
